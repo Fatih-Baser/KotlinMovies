@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.fragment_first.*
 class FirstFragment : Fragment() {
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,11 +30,14 @@ class FirstFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
 
+
+
        firstFragment_button.setOnClickListener {
 
-           val action=FirstFragmentDirections.actionFirstFragmentToSecondFragment()
+           val action=FirstFragmentDirections.actionFirstFragmentToSecondFragment(40)
+
            Navigation.findNavController(it).navigate(action)
-           
+
        }
     }
 
