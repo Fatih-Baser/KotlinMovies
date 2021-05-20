@@ -1,12 +1,11 @@
-package com.fatihbaser.navigationkotlin2
+package com.fatihbaser.navigationkotlin2.gereksiz
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_first.*
+import com.fatihbaser.navigationkotlin2.R
 
 
 class FirstFragment : Fragment() {
@@ -31,16 +30,14 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-       firstFragment_button.setOnClickListener {
-
-           val action=FirstFragmentDirections.actionFirstFragmentToSecondFragment(40)
-
-           Navigation.findNavController(it).navigate(action)
+//
+//       firstFragment_button.setOnClickListener {
+//
+//           val action=FirstFragmentDirections.actionFirstFragmentToSecondFragment(40)
+//
+//           Navigation.findNavController(it).navigate(action)
 
        }
     }
 
 
-            
-}

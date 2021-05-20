@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/my_navigation"
-    app:startDestination="@id/firstFragment">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.fatihbaser.navigationkotlin2.FirstFragment"
-        android:label="FirstFragment" >
+        android:id="@+id/homeFragment"
+        android:name="com.fatihbaser.navigationkotlin2.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
+            android:id="@+id/action_homeFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.fatihbaser.navigationkotlin2.SecondFragment"
-        android:label="SecondFragment" >
+        android:id="@+id/movieDetailFragment"
+        android:name="com.fatihbaser.navigationkotlin2.MovieDetailFragment"
+        android:label="fragment_movie_detail"
+        tools:layout="@layout/fragment_movie_detail" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.fatihbaser.navigationkotlin2.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
         <action
-            android:id="@+id/action_secondFragment_to_firstFragment"
-            app:destination="@id/firstFragment" />
-        <argument
-            android:name="age"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:id="@+id/action_favoriteFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.fatihbaser.navigationkotlin2.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/topRatedFragment"
+        android:name="com.fatihbaser.navigationkotlin2.TopRatedFragment"
+        android:label="fragment_top_rated"
+        tools:layout="@layout/fragment_top_rated" >
+        <action
+            android:id="@+id/action_topRatedFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
     </fragment>
 </navigation>
