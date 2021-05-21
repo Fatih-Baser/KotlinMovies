@@ -1,10 +1,11 @@
 package com.fatihbaser.navigationkotlin2.service
 
-import com.ismailhakkiaydin.movies.model.detail.MovieDetailResponse
-import com.ismailhakkiaydin.movies.model.movie.MovieResponse
-import com.ismailhakkiaydin.movies.model.search.MovieSearchResponse
-import com.ismailhakkiaydin.movies.model.videos.MovieVideoResponse
-import com.ismailhakkiaydin.movies.util.Constant
+import com.fatihbaser.navigationkotlin2.models.detail.MovieDetailResponse
+import com.fatihbaser.navigationkotlin2.models.home.MovieResponse
+import com.fatihbaser.navigationkotlin2.models.search.MovieSearchResponse
+import com.fatihbaser.navigationkotlin2.models.videos.MovieVideoResponse
+import com.fatihbaser.navigationkotlin2.util.Constant
+
 import io.reactivex.Single
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -19,6 +20,7 @@ class ApiClient {
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(getOkhttpClient())
         .build()
+       // .create(ApiService::class.java)
         .create(ApiService::class.java)
 
     fun getTopRatedMovies(): Single<MovieResponse>{

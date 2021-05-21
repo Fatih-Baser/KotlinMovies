@@ -1,4 +1,4 @@
-package com.ismailhakkiaydin.movies.model.videos
+package com.fatihbaser.navigationkotlin2.models.videos
 
 import com.google.gson.annotations.SerializedName
 

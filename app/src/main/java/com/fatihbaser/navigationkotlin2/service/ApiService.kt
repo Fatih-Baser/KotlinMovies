@@ -1,6 +1,10 @@
 package com.fatihbaser.navigationkotlin2.service
 
 
+import com.fatihbaser.navigationkotlin2.models.detail.MovieDetailResponse
+import com.fatihbaser.navigationkotlin2.models.home.MovieResponse
+import com.fatihbaser.navigationkotlin2.models.search.MovieSearchResponse
+import com.fatihbaser.navigationkotlin2.models.videos.MovieVideoResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
