@@ -1,28 +1,122 @@
 package com.fatihbaser.navigationkotlin2.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import com.fatihbaser.navigationkotlin2.R
+import com.fatihbaser.navigationkotlin2.adapters.GenreAdapter
+import com.fatihbaser.navigationkotlin2.adapters.TrailerAdapter
+import com.fatihbaser.navigationkotlin2.databinding.FragmentMovieDetailBinding
+import com.fatihbaser.navigationkotlin2.models.home.MovieResult
+import com.fatihbaser.navigationkotlin2.util.Constant
+import com.fatihbaser.navigationkotlin2.viewmodels.MovieDetailViewModel
+import kotlinx.android.synthetic.main.fragment_movie_detail.*
 
 
-class MovieDetailFragment : Fragment() {
+class MovieDetailFragment : BaseFragment<FragmentMovieDetailBinding, MovieDetailViewModel>() {
 
+    private lateinit var genreAdapter: GenreAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private var movie: MovieResult? = null
+    private var isFav: Boolean? = null
 
-    }
+    override fun getLayoutRes(): Int = R.layout.fragment_movie_detail
+    override fun getViewModel(): Class<MovieDetailViewModel> = MovieDetailViewModel::class.java
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_detail, container, false)
+        super.onCreateView(inflater, container, savedInstanceState)
+
+        arguments?.let {
+            movie = it?.getParcelable("movie_details")
+            dataBinding.detail = movie
+            checkFav()
+            dataBinding.imgFavorite.setOnClickListener {
+                favorite()
+            }
+        }
+
+        /*
+        var movie = arguments?.getParcelable<MovieResult>("movie_details")
+        dataBinding.detail = movie*/
+        return dataBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        var movieDetailResponse = arguments?.getParcelable<MovieResult>("movie_details")
+
+        viewModel.getMovieDetails(movieDetailResponse?.movieId)
+        viewModel.movieDetails.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                dataBinding.content = it
+
+                genreAdapter =
+                    GenreAdapter(it.genres!!)
+                recyclerviewGenres.adapter = genreAdapter
+
+            }
+        })
+
+        viewModel.getMovieTrailers(movieDetailResponse?.movieId)
+        viewModel.movieTrailers.observe(viewLifecycleOwner, Observer{
+            it?.let {
+                recyclerviewTrailer.adapter =
+                    TrailerAdapter(
+                        it
+                    ) {
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.data = Uri.parse(Constant.YOUTUBE_WATCH_URL + it.key)
+                        startActivity(intent)
+                    }
+            }
+        })
+
+        viewModel.loading.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                if (it) {
+                    progressBarTrailer.visibility = View.VISIBLE
+                    recyclerviewTrailer.visibility = View.GONE
+                    progressBarDetail.visibility = View.VISIBLE
+                    lytDetail.visibility = View.GONE
+                } else {
+                    progressBarTrailer.visibility = View.GONE
+                    recyclerviewTrailer.visibility = View.VISIBLE
+                    progressBarDetail.visibility = View.GONE
+                    lytDetail.visibility = View.VISIBLE
+                }
+            }
+        })
+    }
+
+    private fun favorite(){
+        if (isFav!!){
+            viewModel.deleteMovie(movie)
+            Toast.makeText(context!!, "Removed", Toast.LENGTH_SHORT).show()
+        }else{
+            viewModel.insertMovie(movie)
+            Toast.makeText(context!!, "Added", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun checkFav(){
+        viewModel.getSingleMovie(movie?.movieId).observe(viewLifecycleOwner, Observer {
+            if (it != null){
+                dataBinding.imgFavorite.setImageResource(R.drawable.ic_favorite)
+                isFav = true
+            }else{
+                dataBinding.imgFavorite.setImageResource(R.drawable.ic_favorite_border)
+                isFav = false
+            }
+        })
+    }
 
 }
