@@ -50,10 +50,7 @@ you can follow this path and use the API you obtained from [TheMovieDB](https://
 # Design
 I tried to make the design as good as I could for me :)
 
-# Support
-If you want to support, I drink your coffee. :blush: :coffee: 
 
-[<img src="http://ismailhakkiaydin.com/wp-content/uploads/2020/04/patreon.png">](https://www.patreon.com/ihaydinn)
 
 # Contact
 - [Linkedin](www.linkedin.com/in/fatih-baser-0246651a4)
