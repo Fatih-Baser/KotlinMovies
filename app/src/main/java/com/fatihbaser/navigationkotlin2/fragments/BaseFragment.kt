@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 
-abstract class BaseFragment<DB: ViewDataBinding, VM: ViewModel>: Fragment() {
+abstract class    BaseFragment<DB: ViewDataBinding, VM: ViewModel>: Fragment() {
     lateinit var dataBinding: DB
     lateinit var viewModel: VM
 

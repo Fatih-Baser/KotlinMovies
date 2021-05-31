@@ -1,4 +1,4 @@
-package com.fatihbaser.navigationkotlin2.binding
+ package com.fatihbaser.navigationkotlin2.binding
 
 
 import android.widget.ImageView
