@@ -2,17 +2,17 @@
 <img src="http://ismailhakkiaydin.com/wp-content/uploads/2020/04/ic_launcher.png" align="center">
 
 # Content
-- [About Projects](https://github.com/ihaydinn/movies-app#about-projects)
-  - [Screenshoots](https://github.com/ihaydinn/movies-app#screenshoots)
-  - [Abstract](https://github.com/ihaydinn/movies-app#abstract)
-  - [Project Details](https://github.com/ihaydinn/movies-app#projects-details)
-  - [Library and Tools](https://github.com/ihaydinn/movies-app#library-and-tools)
-  - [How Can I Use](https://github.com/ihaydinn/movies-app#how-can-i-use)
-- [Architecture](https://github.com/ihaydinn/movies-app#architecture)
-- [Design](https://github.com/ihaydinn/movies-app#desing)
-- [Support](https://github.com/ihaydinn/movies-app#support)
-- [Contact](https://github.com/ihaydinn/movies-app#contact)
-- [License](https://github.com/ihaydinn/movies-app#license)
+- [About Projects](https://github.com/Fatih-Baser/KotlinMovies)
+  - [Screenshoots](https://github.com/Fatih-Baser/KotlinMovies)
+  - [Abstract](https://github.com/Fatih-Baser/KotlinMovies)
+  - [Project Details](https://github.com/Fatih-Baser/KotlinMovies)
+  - [Library and Tools](https://github.com/Fatih-Baser/KotlinMovies)
+  - [How Can I Use](https://github.com/Fatih-Baser/KotlinMovies)
+- [Architecture](https://github.com/Fatih-Baser/KotlinMovies)
+- [Design](https://github.com/Fatih-Baser/KotlinMovies)
+- [Support](https://github.com/Fatih-Baser/KotlinMovies)
+- [Contact](https://github.com/Fatih-Baser/KotlinMovies)
+
 
 # About Projects
 ### Screenshots
