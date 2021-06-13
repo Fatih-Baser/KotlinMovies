@@ -16,7 +16,7 @@
 
 # About Projects
 ### Screenshots
-<img src="https://github.com/Fatih-Baser/KotlinMovies/blob/master/images/a.jpeg" width="156" height="275">    <img src="https://github.com/Fatih-Baser/KotlinMovies/blob/master/images/b.jpeg" width="156" height="275">    <img src="https://github.com/Fatih-Baser/KotlinMovies/blob/master/images/c.jpeg" width="156" height="275">    <img src="https://github.com/Fatih-Baser/KotlinMovies/blob/master/images/d.jpeg" width="156" height="275">    
+<img src="https://github.com/Fatih-Baser/KotlinMovies/blob/master/images/a.jpeg" width="176" height="275">    <img src="https://github.com/Fatih-Baser/KotlinMovies/blob/master/images/b.jpeg" width="156" height="275">    <img src="https://github.com/Fatih-Baser/KotlinMovies/blob/master/images/c.jpeg" width="156" height="275">    <img src="https://github.com/Fatih-Baser/KotlinMovies/blob/master/images/d.jpeg" width="156" height="275">    
 
 
 ### Abstract
